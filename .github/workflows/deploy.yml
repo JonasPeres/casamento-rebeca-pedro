@@ -1,0 +1,52 @@
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Injetar secrets em js/config.js
+        env:
+          SHEETS_WEB_APP_URL: ${{ secrets.SHEETS_WEB_APP_URL }}
+          SHEETS_TOKEN:       ${{ secrets.SHEETS_TOKEN }}
+          PIX_KEY:            ${{ secrets.PIX_KEY }}
+          PIX_NAME:           ${{ secrets.PIX_NAME }}
+        run: |
+          mkdir -p js
+          cat > js/config.js <<EOF
+          const SHEETS_WEB_APP_URL = "$SHEETS_WEB_APP_URL";
+          const SHEETS_TOKEN       = "$SHEETS_TOKEN";
+          const PIX_KEY            = "$PIX_KEY";
+          const PIX_NAME           = "$PIX_NAME";
+          EOF
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy
+        id: deploy
+        uses: actions/deploy-pages@v4

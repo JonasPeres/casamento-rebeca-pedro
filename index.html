@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rebeca & Pedro | 19.09.2026</title>
+    <meta name="description" content="Site oficial do casamento de Rebeca e Pedro. Sábado, 19 de setembro de 2026, às 16h, no Spazzio Simone Susca em Ibirité, MG. Conheça os detalhes do grande dia." />
+    <meta name="author" content="Rebeca & Pedro" />
+    <meta name="theme-color" content="#3F5C3F" />
+    <link rel="canonical" href="https://rebecapedro.com.br/" />
+
+    <!-- Ícones -->
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+
+    <!-- Open Graph (WhatsApp, Facebook, LinkedIn, Telegram) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Rebeca & Pedro" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:url" content="https://rebecapedro.com.br/" />
+    <meta property="og:title" content="Rebeca & Pedro | 19.09.2026" />
+    <meta property="og:description" content="Sábado, 19 de setembro de 2026, às 16h, no Spazzio Simone Susca. Reserve a data e celebre conosco." />
+    <meta property="og:image" content="https://rebecapedro.com.br/assets/og-image.jpg" />
+    <meta property="og:image:secure_url" content="https://rebecapedro.com.br/assets/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Rebeca & Pedro, 19 de setembro de 2026" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Rebeca & Pedro | 19.09.2026" />
+    <meta name="twitter:description" content="Sábado, 19 de setembro de 2026, às 16h, no Spazzio Simone Susca. Reserve a data." />
+    <meta name="twitter:image" content="https://rebecapedro.com.br/assets/og-image.jpg" />
+
+    <!-- Dados estruturados (Schema.org Event) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "Casamento de Rebeca e Pedro",
+        "startDate": "2026-09-19T16:00:00-03:00",
+        "endDate": "2026-09-19T23:00:00-03:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": "Spazzio Simone Susca",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Av. Otacílio Negrão de Lima, 410, Aluoto",
+            "addressLocality": "Ibirité",
+            "addressRegion": "MG",
+            "postalCode": "32400-206",
+            "addressCountry": "BR"
+          }
+        },
+        "image": "https://rebecapedro.com.br/assets/og-image.jpg",
+        "description": "Casamento de Rebeca e Pedro. Cerimônia e festa no Spazzio Simone Susca, em Ibirité, MG.",
+        "url": "https://rebecapedro.com.br/",
+        "organizer": [
+          { "@type": "Person", "name": "Rebeca" },
+          { "@type": "Person", "name": "Pedro" }
+        ]
+      }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- HERO -->
+    <header class="hero" id="top">
+      <img
+        class="hero__bg"
+        src="assets/fotos/foto-2.jpeg"
+        alt=""
+        aria-hidden="true"
+        fetchpriority="high"
+      />
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <canvas id="petals" class="petals" aria-hidden="true"></canvas>
+
+      <div class="hero__content">
+        <div class="monogram" aria-hidden="true">
+          <svg
+            viewBox="0 0 240 240"
+            class="monogram__leaf monogram__leaf--left"
+          >
+            <path
+              d="M20 220 Q40 120 120 60 Q70 130 60 220"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.2"
+            />
+            <circle cx="50" cy="180" r="3" fill="currentColor" />
+            <circle cx="70" cy="150" r="3" fill="currentColor" />
+            <circle cx="90" cy="120" r="3" fill="currentColor" />
+            <circle cx="110" cy="90" r="3" fill="currentColor" />
+          </svg>
+          <div class="monogram__box">
+            <span class="monogram__letter">R</span>
+            <span class="monogram__amp">&amp;</span>
+            <span class="monogram__letter">P</span>
+          </div>
+          <svg
+            viewBox="0 0 240 240"
+            class="monogram__leaf monogram__leaf--right"
+          >
+            <path
+              d="M220 220 Q200 120 120 60 Q170 130 180 220"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.2"
+            />
+            <circle cx="190" cy="180" r="3" fill="currentColor" />
+            <circle cx="170" cy="150" r="3" fill="currentColor" />
+            <circle cx="150" cy="120" r="3" fill="currentColor" />
+            <circle cx="130" cy="90" r="3" fill="currentColor" />
+          </svg>
+        </div>
+
+        <h1 class="hero__title">Rebeca <span class="amp">&amp;</span> Pedro</h1>
+        <p class="hero__date">19 . 09 . 2026</p>
+        <p class="hero__sub">Spazzio Simone Susca</p>
+      </div>
+
+      <a href="#contagem" class="hero__scroll" aria-label="Role para baixo">
+        <span></span>
+      </a>
+    </header>
+
+    <!-- COUNTDOWN -->
+    <section class="countdown" id="contagem">
+      <div class="container reveal">
+        <p class="eyebrow">Contagem regressiva</p>
+        <h2 class="section-title light">Faltam para o grande dia</h2>
+        <div class="countdown__grid" id="countdown-grid">
+          <div class="countdown__cell">
+            <strong data-unit="days">--</strong><span>dias</span>
+          </div>
+          <div class="countdown__cell">
+            <strong data-unit="hours">--</strong><span>horas</span>
+          </div>
+          <div class="countdown__cell">
+            <strong data-unit="minutes">--</strong><span>minutos</span>
+          </div>
+          <div class="countdown__cell">
+            <strong data-unit="seconds">--</strong><span>segundos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERIMÔNIA & FESTA -->
+    <section class="ceremony section">
+      <div class="container reveal">
+        <p class="eyebrow">Cerimônia & Festa</p>
+        <h2 class="section-title">Onde tudo vai acontecer</h2>
+
+        <div class="ceremony__grid">
+          <div class="ceremony__info">
+            <div class="ceremony__row">
+              <svg viewBox="0 0 24 24" class="icon">
+                <path
+                  fill="currentColor"
+                  d="M7 2h2v2h6V2h2v2h3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2V2zm13 8H4v10h16V10z"
+                />
+              </svg>
+              <div>
+                <strong>Sábado, 19 de setembro de 2026</strong>
+                <span>Cerimônia às 16h</span>
+              </div>
+            </div>
+            <div class="ceremony__row">
+              <svg viewBox="0 0 24 24" class="icon">
+                <path
+                  fill="currentColor"
+                  d="M12 2a8 8 0 0 0-8 8c0 5.5 8 12 8 12s8-6.5 8-12a8 8 0 0 0-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"
+                />
+              </svg>
+              <div>
+                <strong>Spazzio Simone Susca</strong>
+                <span
+                  >Av. Otacílio Negrão de Lima, 410, Aluoto<br />Ibirité, MG,
+                  32400-206</span
+                >
+              </div>
+            </div>
+            <a
+              class="btn btn--coral"
+              href="https://maps.app.goo.gl/STTVpd2hYqJtULex5?g_st=aw"
+              target="_blank"
+              rel="noopener"
+            >
+              Abrir no Google Maps
+            </a>
+          </div>
+
+          <div class="ceremony__visual">
+            <img
+              src="assets/fotos/foto-6.jpeg"
+              alt="Ilustração em aquarela da capela"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DRESS CODE -->
+    <section class="dresscode section section--sage">
+      <div class="container reveal">
+        <p class="eyebrow">Dress code</p>
+        <h2 class="section-title">Celebraremos com elegância</h2>
+        <p class="lead">
+          O traje sugerido é <strong>traje social</strong>. Pedimos gentilmente
+          que evitem as cores <em>branco</em>, <em>off-white</em> e
+          <em>nude</em>, reservadas à noiva.
+        </p>
+        <p class="lead lead--tip">
+          💐 <strong>Dica para as convidadas:</strong> a cerimônia acontecerá no
+          gramado, evitem saltos finos.
+        </p>
+
+        <div class="palette">
+          <p class="palette__label">Inspire-se na nossa paleta:</p>
+          <div class="palette__chips">
+            <span class="chip" style="--c: #4a6a4a" title="Verde escuro"></span>
+            <span class="chip" style="--c: #b8cdb5" title="Sage"></span>
+            <span class="chip" style="--c: #c8388b" title="Magenta"></span>
+            <span class="chip" style="--c: #f19478" title="Coral"></span>
+            <span class="chip" style="--c: #e8c547" title="Mostarda"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section class="gallery section section--cream">
+      <div class="container reveal">
+        <p class="eyebrow">Galeria</p>
+        <h2 class="section-title">Nós dois</h2>
+
+        <div class="carousel" id="carousel">
+          <button
+            class="carousel__nav carousel__nav--prev"
+            aria-label="Anterior"
+            type="button"
+          >
+            &#10094;
+          </button>
+          <div class="carousel__track" id="carousel-track">
+            <figure class="carousel__slide">
+              <img
+                src="assets/fotos/foto-1.jpeg"
+                alt="Rebeca e Pedro"
+                loading="lazy"
+              />
+            </figure>
+            <figure class="carousel__slide">
+              <img
+                src="assets/fotos/foto-2.jpeg"
+                alt="Rebeca e Pedro"
+                loading="lazy"
+              />
+            </figure>
+            <figure class="carousel__slide">
+              <img
+                src="assets/fotos/foto-3.jpeg"
+                alt="Rebeca e Pedro"
+                loading="lazy"
+              />
+            </figure>
+            <figure class="carousel__slide">
+              <img
+                src="assets/fotos/foto-4.jpeg"
+                alt="Rebeca e Pedro"
+                loading="lazy"
+              />
+            </figure>
+            <figure class="carousel__slide">
+              <img
+                src="assets/fotos/foto-5.jpeg"
+                alt="Rebeca e Pedro"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+          <button
+            class="carousel__nav carousel__nav--next"
+            aria-label="Próxima"
+            type="button"
+          >
+            &#10095;
+          </button>
+          <div class="carousel__dots" id="carousel-dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRESENTES -->
+    <section class="gifts section section--coral">
+      <div class="container reveal">
+        <p class="eyebrow">Lista de presentes</p>
+        <h2 class="section-title light">Nos ajude a construir nosso lar</h2>
+        <p class="lead light">
+          Sua presença já é o nosso maior presente. Mas, se quiser nos mimar,
+          preparamos uma lista com muito carinho: de itens para a casa nova
+          à nossa lua de mel.
+        </p>
+        <a class="btn btn--light" href="presentes.html">Ver lista de presentes</a>
+      </div>
+    </section>
+
+    <!-- RSVP (placeholder) -->
+    <section class="rsvp section">
+      <div class="container reveal">
+        <p class="eyebrow">Confirmação de presença</p>
+        <h2 class="section-title">Aguarde notícias</h2>
+        <p class="lead">
+          As confirmações serão abertas em breve. Reserve a data e prepare o
+          look. Avisaremos por aqui assim que estiver disponível.
+        </p>
+      </div>
+    </section>
+
+    <!-- INFORMAÇÕES IMPORTANTES -->
+    <section class="info section section--sage">
+      <div class="container reveal">
+        <p class="eyebrow">Informações importantes</p>
+        <h2 class="section-title">Tudo o que vocês precisam saber</h2>
+
+        <div class="accordion">
+          <details>
+            <summary>Estacionamento</summary>
+            <p>
+              O Spazzio Simone Susca não oferece estacionamento próprio, mas
+              existem estacionamentos próximos ao espaço.
+            </p>
+          </details>
+          <details>
+            <summary>Crianças</summary>
+            <p>
+              As crianças são muito bem-vindas em nosso casamento!<br /><br />
+              Pedimos a compreensão dos pais e responsáveis, pois o evento não
+              contará com espaço kids ou monitores infantis. Assim, os cuidados
+              e supervisão das crianças durante toda a celebração serão de
+              responsabilidade da família.
+            </p>
+          </details>
+          <details>
+            <summary>Presentes em dinheiro / PIX</summary>
+            <p>
+              A chave PIX e os detalhes das cotas serão divulgados junto com a
+              lista de presentes.
+            </p>
+          </details>
+          <details>
+            <summary>Contato</summary>
+            <p>
+              Em caso de dúvidas, entre em contato com a cerimonialista,
+              informações em breve.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__mono">R &amp; P</div>
+        <p>Feito com 💚 para 19 . 09 . 2026</p>
+      </div>
+    </footer>
+
+    <script src="js/countdown.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/petals.js"></script>
+    <script src="js/reveal.js"></script>
+  </body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lista de Presentes | Rebeca & Pedro</title>
+  <meta name="description" content="Lista de presentes do casamento de Rebeca e Pedro. Escolha um item, faça o PIX ou compre no link, e confirme aqui. Sua presença já é o nosso maior presente." />
+  <meta name="theme-color" content="#3F5C3F" />
+  <link rel="canonical" href="https://rebecapedro.com.br/presentes.html" />
+
+  <!-- Ícones -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Rebeca & Pedro" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:url" content="https://rebecapedro.com.br/presentes.html" />
+  <meta property="og:title" content="Lista de Presentes | Rebeca & Pedro" />
+  <meta property="og:description" content="Nos ajude a construir nosso lar. Escolha um presente da nossa lista, da casa nova à lua de mel. 💚" />
+  <meta property="og:image" content="https://rebecapedro.com.br/assets/og-image.jpg" />
+  <meta property="og:image:secure_url" content="https://rebecapedro.com.br/assets/og-image.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Rebeca & Pedro, 19 de setembro de 2026" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lista de Presentes | Rebeca & Pedro" />
+  <meta name="twitter:description" content="Nos ajude a construir nosso lar 💚" />
+  <meta name="twitter:image" content="https://rebecapedro.com.br/assets/og-image.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="gift-page">
+
+  <header class="gift-hero">
+    <a href="index.html" class="gift-back">&#8592; Voltar ao site</a>
+    <div class="gift-hero__inner">
+      <div class="footer__mono">R &amp; P</div>
+      <p class="eyebrow">Lista de presentes</p>
+      <h1 class="section-title light">Nos ajude a construir nosso lar</h1>
+      <p class="lead light">
+        Sua presença já é o nosso maior presente. Mas, se quiser nos mimar,
+        preparamos esta lista com muito carinho: de itens para a casa nova
+        à nossa lua de mel. 💚
+      </p>
+    </div>
+  </header>
+
+  <main class="gift-main">
+    <div class="container">
+
+      <p class="mode-note" id="mode-note"></p>
+
+      <!-- PIX em destaque -->
+      <section class="pix-box reveal">
+        <div>
+          <p class="pix-box__label">Prefere presentear com PIX de valor livre?</p>
+          <p class="pix-box__key" id="pix-display" data-pix-display></p>
+          <p class="pix-box__name" data-pix-name></p>
+        </div>
+        <button type="button" class="btn btn--coral" id="pix-livre-trigger">Presentear com PIX livre</button>
+      </section>
+
+      <!-- Progresso -->
+      <div class="gift-progresswrap reveal" id="gift-progresswrap">
+        <div class="gift-progress__track"><span id="gift-progress" class="gift-progress__bar"></span></div>
+        <p class="gift-progress__count" id="gift-count">Carregando…</p>
+      </div>
+
+      <!-- Filtros -->
+      <nav class="gift-filters" id="gift-filters" aria-label="Filtrar por categoria"></nav>
+
+      <!-- Lista -->
+      <section class="gift-list" id="gift-list">
+        <p class="gift-empty">Carregando lista…</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__mono">R &amp; P</div>
+      <p>Feito com 💚 para 19 . 09 . 2026</p>
+    </div>
+  </footer>
+
+  <!-- Modal de presentear -->
+  <div class="gift-modal" id="gift-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="gift-modal__backdrop" data-modal-backdrop></div>
+    <div class="gift-modal__card">
+      <button type="button" class="gift-modal__close" aria-label="Fechar">&times;</button>
+
+      <div class="gift-modal__head">
+        <img class="gift-modal__img" data-modal-img alt="">
+        <div>
+          <p class="eyebrow">Presentear</p>
+          <h2 class="gift-modal__name" id="modal-title" data-modal-name>...</h2>
+          <p class="gift-modal__price" data-modal-price>...</p>
+        </div>
+      </div>
+
+      <ol class="gift-modal__steps-list">
+        <li>
+          Escolha como pagar: pelo <strong>PIX</strong> ou pelo <strong>link de compra direta</strong> do item.
+          <div class="gift-modal__paypair">
+            <div class="gift-modal__pixrow">
+              <div>
+                <span class="gift-modal__pixlabel">Chave PIX (telefone)</span>
+                <span class="gift-modal__pixkey" data-modal-pixkey>...</span>
+                <span class="gift-modal__pixname" data-modal-pixname>...</span>
+              </div>
+              <button type="button" class="btn btn--outline" data-modal-copy>Copiar</button>
+            </div>
+            <a class="btn btn--outline gift-modal__buybtn" data-modal-buylink href="#" target="_blank" rel="noopener">Abrir link de compra ↗</a>
+            <span class="pix-box__feedback" data-copy-feedback></span>
+          </div>
+        </li>
+        <li>
+          Depois de pagar, preencha abaixo para confirmar o presente.
+          <div class="gift-form">
+            <label class="gift-form__field">
+              <span>Seu nome completo</span>
+              <input type="text" data-field-name placeholder="Ex.: Maria Silva" autocomplete="name" />
+            </label>
+
+            <fieldset class="gift-form__field gift-form__radios">
+              <legend>Como você pagou?</legend>
+              <label><input type="radio" name="metodo" value="PIX" data-field-method> <span>PIX</span></label>
+              <label><input type="radio" name="metodo" value="Link" data-field-method> <span>Link de compra</span></label>
+            </fieldset>
+
+            <label class="gift-form__field gift-form__file">
+              <span>Comprovante (imagem ou PDF)</span>
+              <input type="file" data-field-receipt accept="image/*,application/pdf" hidden>
+              <span class="gift-form__filebtn" data-receipt-label>Selecionar arquivo</span>
+            </label>
+            <div class="receipt-preview" data-receipt-wrap style="display:none">
+              <div class="receipt-preview__media" data-receipt-preview></div>
+              <button type="button" class="receipt-preview__remove" data-receipt-remove aria-label="Remover comprovante">&times;</button>
+            </div>
+          </div>
+        </li>
+      </ol>
+
+      <p class="gift-modal__error" data-modal-error></p>
+      <button type="button" class="btn btn--coral gift-modal__confirm" data-modal-confirm disabled>Confirmar ✓</button>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="gift-toast" id="gift-toast" role="status" aria-live="polite"></div>
+
+  <!-- Modal PIX Livre -->
+  <div class="gift-modal" id="pixlivre-modal" role="dialog" aria-modal="true" aria-labelledby="pl-title">
+    <div class="gift-modal__backdrop" data-pl-backdrop></div>
+    <div class="gift-modal__card">
+      <button type="button" class="gift-modal__close" aria-label="Fechar">&times;</button>
+
+      <div class="gift-modal__head">
+        <div class="pl-icon" aria-hidden="true">💚</div>
+        <div>
+          <p class="eyebrow">Presentear com PIX livre</p>
+          <h2 class="gift-modal__name" id="pl-title">Qualquer valor é muito bem-vindo</h2>
+          <p class="gift-modal__price">Você escolhe o valor que deseja presentear</p>
+        </div>
+      </div>
+
+      <ol class="gift-modal__steps-list">
+        <li>
+          Faça o PIX com o valor que quiser usando a chave abaixo.
+          <div class="gift-modal__paypair">
+            <div class="gift-modal__pixrow">
+              <div>
+                <span class="gift-modal__pixlabel">Chave PIX (telefone)</span>
+                <span class="gift-modal__pixkey" data-pl-pixkey>...</span>
+                <span class="gift-modal__pixname" data-pl-pixname>...</span>
+              </div>
+              <button type="button" class="btn btn--outline" data-pl-copy>Copiar</button>
+            </div>
+            <span class="pix-box__feedback" data-pl-feedback></span>
+          </div>
+        </li>
+        <li>
+          Depois de pagar, preencha pra registrar o seu presente.
+          <div class="gift-form">
+            <label class="gift-form__field">
+              <span>Seu nome completo</span>
+              <input type="text" data-pl-name placeholder="Ex.: Maria Silva" autocomplete="name" />
+            </label>
+            <label class="gift-form__field gift-form__money">
+              <span>Valor presenteado</span>
+              <input type="text" data-pl-value placeholder="0,00" inputmode="numeric" autocomplete="off" />
+            </label>
+            <label class="gift-form__field gift-form__file">
+              <span>Comprovante (imagem ou PDF)</span>
+              <input type="file" data-pl-receipt accept="image/*,application/pdf" hidden>
+              <span class="gift-form__filebtn" data-pl-receipt-label>Selecionar arquivo</span>
+            </label>
+            <div class="receipt-preview" data-pl-wrap style="display:none">
+              <div class="receipt-preview__media" data-pl-preview></div>
+              <button type="button" class="receipt-preview__remove" data-pl-receipt-remove aria-label="Remover comprovante">&times;</button>
+            </div>
+          </div>
+        </li>
+      </ol>
+
+      <p class="gift-modal__error" data-pl-error></p>
+      <button type="button" class="btn btn--coral gift-modal__confirm" data-pl-confirm disabled>Confirmar ✓</button>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/gifts.js"></script>
+  <script src="js/reveal.js"></script>
+</body>
+</html>

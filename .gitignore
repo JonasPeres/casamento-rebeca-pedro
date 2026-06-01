@@ -1,0 +1,20 @@
+# Configuração local com secrets (gerada em deploy via GitHub Actions)
+js/config.js
+
+# Dependências
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Logs e temporários
+*.log
+.env
+.env.*
+_tmp*
