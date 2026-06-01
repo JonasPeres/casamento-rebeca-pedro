@@ -226,6 +226,10 @@ function montarResumo() {
   const PX = "'" + SHEET_PIX_LIVRE + "'";
   const PR = "'" + SHEET_PRESENCA + "'";
 
+  // Separador de argumentos conforme o locale da planilha (pt-BR usa ";")
+  const sep = ss.getSpreadsheetLocale().indexOf('pt') === 0 ? ';' : ',';
+  const f = (s) => s.split('|').join(sep); // usamos "|" como marcador e trocamos pelo separador certo
+
   const rows = [
     ['PAINEL DO CASAMENTO  •  REBECA & PEDRO', ''],
     ['', ''],
@@ -235,26 +239,26 @@ function montarResumo() {
     ['Contribuições PIX livre (qtd)', `=COUNTA(${PX}!A2:A)`],
     ['Valor em PIX livre',         `=SUM(${PX}!B2:B)`],
     ['TOTAL ARRECADADO',           `=B5+B7`],
-    ['Ticket médio por presente',  `=IFERROR(B5/B4,0)`],
+    ['Ticket médio por presente',  f(`=IFERROR(B5/B4|0)`)],
     ['', ''],
     ['👥 PRESENÇA', ''],
     ['Confirmados (total de pessoas)', `=COUNTA(${PR}!A2:A)`],
-    ['Adultos (18+)',              `=COUNTIF(${PR}!B2:B,">=18")`],
-    ['Jovens (11 a 17)',           `=COUNTIFS(${PR}!B2:B,">=11",${PR}!B2:B,"<18")`],
-    ['Crianças (6 a 10)',          `=COUNTIFS(${PR}!B2:B,">=6",${PR}!B2:B,"<11")`],
-    ['Bebês/pequenos (0 a 5)',     `=COUNTIFS(${PR}!B2:B,">=0",${PR}!B2:B,"<6")`],
-    ['Idade média',                `=IFERROR(ROUND(AVERAGE(${PR}!B2:B),0),0)`],
+    ['Adultos (18+)',              f(`=COUNTIF(${PR}!B2:B|">=18")`)],
+    ['Jovens (11 a 17)',           f(`=COUNTIFS(${PR}!B2:B|">=11"|${PR}!B2:B|"<18")`)],
+    ['Crianças (6 a 10)',          f(`=COUNTIFS(${PR}!B2:B|">=6"|${PR}!B2:B|"<11")`)],
+    ['Bebês/pequenos (0 a 5)',     f(`=COUNTIFS(${PR}!B2:B|">=0"|${PR}!B2:B|"<6")`)],
+    ['Idade média',                f(`=IFERROR(ROUND(AVERAGE(${PR}!B2:B)|0)|0)`)],
     ['', ''],
     ['🎁 LISTA DE PRESENTES', ''],
     ['Itens no catálogo',          TOTAL_ITENS_LISTA],
     ['Já escolhidos',              `=B4`],
     ['Ainda disponíveis',          `=B20-B21`],
-    ['% da lista concluída',       `=IFERROR(B21/B20,0)`],
+    ['% da lista concluída',       f(`=IFERROR(B21/B20|0)`)],
     ['', ''],
     ['⏱️ ATIVIDADE', ''],
-    ['Último presente escolhido',  `=IFERROR(MAX(${P}!G2:G),"-")`],
-    ['Última confirmação',         `=IFERROR(MAX(${PR}!D2:D),"-")`],
-    ['Última contribuição PIX',    `=IFERROR(MAX(${PX}!D2:D),"-")`],
+    ['Último presente escolhido',  f(`=IFERROR(MAX(${P}!G2:G)|"-")`)],
+    ['Última confirmação',         f(`=IFERROR(MAX(${PR}!D2:D)|"-")`)],
+    ['Última contribuição PIX',    f(`=IFERROR(MAX(${PX}!D2:D)|"-")`)],
   ];
 
   sh.getRange(1, 1, rows.length, 2).setValues(rows);
