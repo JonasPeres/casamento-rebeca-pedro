@@ -510,6 +510,7 @@ function setupModal() {
       await GiftStore.claim({
         id: modalGift.id,
         item: modalGift.name,
+        valor: modalGift.price,
         convidado: nome,
         metodo,
         receiptBase64: base64,

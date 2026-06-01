@@ -320,15 +320,17 @@
       </div>
     </section>
 
-    <!-- RSVP (placeholder) -->
+    <!-- RSVP -->
     <section class="rsvp section">
       <div class="container reveal">
         <p class="eyebrow">Confirmação de presença</p>
-        <h2 class="section-title">Aguarde notícias</h2>
+        <h2 class="section-title">Vai celebrar com a gente?</h2>
         <p class="lead">
-          As confirmações serão abertas em breve. Reserve a data e prepare o
-          look. Avisaremos por aqui assim que estiver disponível.
+          Sua presença é o que vai tornar esse dia ainda mais especial. Confirme
+          abaixo para nos ajudar com a organização. Cada convidado deve confirmar
+          individualmente (inclusive as crianças).
         </p>
+        <button type="button" class="btn btn--coral" id="rsvp-trigger">Confirmar presença</button>
       </div>
     </section>
 
@@ -382,6 +384,46 @@
       </div>
     </footer>
 
+    <!-- Modal de confirmação de presença -->
+    <div class="gift-modal" id="rsvp-modal" role="dialog" aria-modal="true" aria-labelledby="rsvp-title">
+      <div class="gift-modal__backdrop" data-rsvp-backdrop></div>
+      <div class="gift-modal__card">
+        <button type="button" class="gift-modal__close" aria-label="Fechar">&times;</button>
+
+        <div class="gift-modal__head">
+          <div class="pl-icon" aria-hidden="true">💌</div>
+          <div>
+            <p class="eyebrow">Confirmação de presença</p>
+            <h2 class="gift-modal__name" id="rsvp-title">Confirme sua presença</h2>
+            <p class="gift-modal__price">Preencha uma vez por convidado</p>
+          </div>
+        </div>
+
+        <div class="gift-form">
+          <label class="gift-form__field">
+            <span>Nome completo</span>
+            <input type="text" data-rsvp-name placeholder="Ex.: Maria Silva" autocomplete="name" />
+          </label>
+          <label class="gift-form__field gift-form__age">
+            <span>Idade</span>
+            <input type="number" data-rsvp-age placeholder="Ex.: 30" min="0" max="120" inputmode="numeric" />
+          </label>
+          <label class="gift-form__field">
+            <span>Telefone (WhatsApp)</span>
+            <input type="tel" data-rsvp-phone placeholder="(31) 99999-9999" inputmode="numeric" autocomplete="tel" />
+          </label>
+        </div>
+
+        <p class="gift-modal__error" data-rsvp-error></p>
+        <button type="button" class="btn btn--coral gift-modal__confirm" data-rsvp-confirm disabled>Confirmar presença ✓</button>
+      </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="gift-toast" id="gift-toast" role="status" aria-live="polite"></div>
+
+    <script src="js/config.js"></script>
+    <script src="js/rsvp.js"></script>
     <script src="js/countdown.js"></script>
     <script src="js/carousel.js"></script>
     <script src="js/petals.js"></script>

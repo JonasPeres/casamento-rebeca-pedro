@@ -36,12 +36,13 @@ A lista de presentes registra cada confirmação numa planilha do Google em temp
 | 💸 **PIX livre** com qualquer valor | 📋 **Comprovante** salvo no Drive |
 | 🌸 **Pétalas caindo** no hero (canvas) | 🪄 **Reveal animations** ao rolar |
 | 📱 **Mobile-first** + PWA básico | 🔎 **SEO completo** (OG, Twitter, JSON-LD) |
+| 💌 **Confirmação de presença** (RSVP) | 📊 **Painel** na planilha com totais e faixas etárias |
 
 ## 📁 Estrutura
 
 ```
 .
-├── index.html              # Home: hero, contagem, cerimônia, dress code, galeria, FAQ
+├── index.html              # Home: hero, contagem, cerimônia, dress code, galeria, RSVP, FAQ
 ├── presentes.html          # Lista de presentes + PIX livre
 │
 ├── assets/
@@ -55,13 +56,14 @@ A lista de presentes registra cada confirmação numa planilha do Google em temp
 ├── js/
 │   ├── config.example.js   # Template (config.js real fica gitignored)
 │   ├── gifts.js            # Lista de presentes + GiftStore
+│   ├── rsvp.js             # Confirmação de presença
 │   ├── carousel.js         # Galeria
 │   ├── countdown.js        # Contagem regressiva
 │   ├── petals.js           # Canvas das pétalas
 │   └── reveal.js           # IntersectionObserver pros fade-ins
 │
 ├── backend/
-│   └── apps-script.gs      # Código que roda no Apps Script da planilha
+│   └── apps-script.gs      # API + painel de resumo na planilha
 │
 └── .github/workflows/
     └── deploy.yml          # CI: injeta secrets e publica no Pages
