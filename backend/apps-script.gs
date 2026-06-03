@@ -190,8 +190,9 @@ function saveReceipt_(prefix, convidado, base64, filename, mime) {
     mime || 'application/octet-stream',
     fullName
   );
+  // Sem setSharing: mais rápido e mantém o comprovante PRIVADO.
+  // O dono da planilha (proprietário dos arquivos) abre normalmente pelo link.
   const file = folder.createFile(blob);
-  file.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
   return file.getUrl();
 }
 

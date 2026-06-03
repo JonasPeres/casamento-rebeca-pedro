@@ -440,6 +440,47 @@ function readFileAsBase64(file) {
   });
 }
 
+// Redimensiona/comprime imagem no navegador antes de enviar (acelera muito o upload).
+// PDFs e formatos não-imagem passam direto.
+function compressImage(file, maxDim, quality) {
+  maxDim = maxDim || 1600;
+  quality = quality || 0.8;
+  return new Promise((resolve, reject) => {
+    const url = URL.createObjectURL(file);
+    const img = new Image();
+    img.onload = () => {
+      URL.revokeObjectURL(url);
+      let { width, height } = img;
+      if (width > maxDim || height > maxDim) {
+        if (width >= height) { height = Math.round(height * maxDim / width); width = maxDim; }
+        else { width = Math.round(width * maxDim / height); height = maxDim; }
+      }
+      const canvas = document.createElement('canvas');
+      canvas.width = width; canvas.height = height;
+      canvas.getContext('2d').drawImage(img, 0, 0, width, height);
+      const dataUrl = canvas.toDataURL('image/jpeg', quality);
+      resolve({ base64: dataUrl.split(',')[1], mime: 'image/jpeg' });
+    };
+    img.onerror = reject;
+    img.src = url;
+  });
+}
+
+// Prepara o comprovante pra envio: comprime se for imagem, senão lê cru.
+async function prepareReceipt(file) {
+  if (file.type && file.type.indexOf('image/') === 0) {
+    try {
+      const c = await compressImage(file);
+      const filename = file.name.replace(/\.(png|webp|heic|heif|bmp|tiff?)$/i, '.jpg');
+      return { base64: c.base64, mime: c.mime, filename };
+    } catch (e) {
+      console.warn('compressão falhou, enviando original', e);
+    }
+  }
+  const r = await readFileAsBase64(file);
+  return { base64: r.base64, mime: r.mime, filename: file.name };
+}
+
 function setupModal() {
   const m = document.getElementById('gift-modal');
   m.querySelector('.gift-modal__close').addEventListener('click', closeModal);
@@ -506,7 +547,7 @@ function setupModal() {
     setSubmitting(m, true);
     confirmBtn.textContent = 'Enviando…';
     try {
-      const { base64, mime } = await readFileAsBase64(file);
+      const { base64, mime, filename } = await prepareReceipt(file);
       await GiftStore.claim({
         id: modalGift.id,
         item: modalGift.name,
@@ -514,13 +555,15 @@ function setupModal() {
         convidado: nome,
         metodo,
         receiptBase64: base64,
-        receiptFilename: file.name,
+        receiptFilename: filename,
         receiptMime: mime,
       });
       setLastName(nome);
+      // Atualiza a tela localmente (sem novo GET ao servidor): mais rápido.
+      claimedCache[modalGift.id] = { convidado: nome, metodo, em: new Date().toISOString() };
       closeModal();
       showToast(`Presente confirmado! Obrigada, ${nome.split(' ')[0]}! 💝`, 'success');
-      await refreshClaimedAndRender();
+      renderAll();
     } catch (e) {
       console.error(e);
       errEl.textContent = 'Algo deu errado: ' + (e.message || 'tente de novo em alguns segundos.');
@@ -654,12 +697,12 @@ function setupPixLivreModal() {
     setSubmitting(m, true);
     confirmBtn.textContent = 'Enviando…';
     try {
-      const { base64, mime } = await readFileAsBase64(file);
+      const { base64, mime, filename } = await prepareReceipt(file);
       await GiftStore.pixLivre({
         convidado: nome,
         valor,
         receiptBase64: base64,
-        receiptFilename: file.name,
+        receiptFilename: filename,
         receiptMime: mime,
       });
       setLastName(nome);
