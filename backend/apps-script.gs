@@ -28,7 +28,7 @@ const SHEET_RESUMO    = 'Resumo';
 const FOLDER_NAME     = 'Comprovantes Casamento R&P';
 
 // Quantidade de itens no catálogo da lista (definido no front, em js/gifts.js)
-const TOTAL_ITENS_LISTA = 48;
+const TOTAL_ITENS_LISTA = 52;
 
 /* ====================== Segurança ====================== */
 function getToken_() {

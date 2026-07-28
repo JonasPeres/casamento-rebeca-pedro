@@ -78,6 +78,10 @@ const GIFTS = [
   { id: 'espagueteira',     name: 'Espagueteira Inox',                            price: 230,     cat: 'cozinha',   img: 'assets/presentes/img-46.png', link: 'https://mpago.la/2Vghx4C' },
   { id: 'sanduicheira',     name: 'Sanduicheira / grill',                         price: 140,     cat: 'eletro',    img: 'assets/presentes/img-47.png', link: 'https://mpago.la/23TrmJq' },
   { id: 'petisqueira',      name: 'Petisqueira madeira e porcelana',              price: 165,     cat: 'cozinha',   img: 'assets/presentes/img-48.png', link: 'https://mpago.la/2hUzvxM' },
+  { id: 'maquina-lavar',    name: 'Máquina de lavar',                             price: 2631,    cat: 'eletro',    img: 'assets/presentes/img-49.jpeg', link: 'https://mpago.la/2Qona5y' },
+  { id: 'robo-aspirador',   name: 'Robô aspirador',                               price: 2400,    cat: 'eletro',    img: 'assets/presentes/img-50.jpeg', link: 'https://mpago.la/1reRQfA' },
+  { id: 'depurador',        name: 'Depurador de ar',                              price: 420.96,  cat: 'eletro',    img: 'assets/presentes/img-51.jpeg', link: 'https://mpago.la/2quekVk' },
+  { id: 'ps5',              name: 'PS5: diversão pro noivo',                      price: 4420,    cat: 'divertidos',img: 'assets/presentes/img-52.jpeg', link: 'https://mpago.la/1Nr6KJb' },
 ];
 
 const brl = (v) => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
