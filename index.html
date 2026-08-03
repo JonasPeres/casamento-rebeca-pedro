@@ -326,9 +326,9 @@
         <p class="eyebrow">Confirmação de presença</p>
         <h2 class="section-title">Vai celebrar com a gente?</h2>
         <p class="lead">
-          Sua presença é o que vai tornar esse dia ainda mais especial. Confirme
-          abaixo para nos ajudar com a organização. Cada convidado deve confirmar
-          individualmente (inclusive as crianças).
+          Sua presença é o que vai tornar esse dia ainda mais especial. O prazo
+          para confirmação já foi encerrado, mas seguimos ansiosos para receber
+          você no nosso grande dia.
         </p>
         <button type="button" class="btn btn--coral" id="rsvp-trigger">Confirmar presença</button>
       </div>
@@ -416,6 +416,26 @@
 
         <p class="gift-modal__error" data-rsvp-error></p>
         <button type="button" class="btn btn--coral gift-modal__confirm" data-rsvp-confirm disabled>Confirmar presença ✓</button>
+      </div>
+    </div>
+
+    <!-- Modal: confirmações encerradas -->
+    <div class="gift-modal" id="rsvp-closed-modal" role="dialog" aria-modal="true" aria-labelledby="rsvp-closed-title">
+      <div class="gift-modal__backdrop" data-rsvp-closed-backdrop></div>
+      <div class="gift-modal__card">
+        <button type="button" class="gift-modal__close" aria-label="Fechar">&times;</button>
+        <div class="gift-modal__head">
+          <div class="pl-icon" aria-hidden="true">⏳</div>
+          <div>
+            <p class="eyebrow">Confirmação de presença</p>
+            <h2 class="gift-modal__name" id="rsvp-closed-title">As confirmações foram encerradas</h2>
+          </div>
+        </div>
+        <p class="lead" style="text-align:left;margin:0">
+          O prazo para confirmar presença já se encerrou e a nossa lista de
+          convidados foi fechada. Se você tiver qualquer dúvida, fale diretamente
+          com os noivos. Obrigada pelo carinho! 💚
+        </p>
       </div>
     </div>
 

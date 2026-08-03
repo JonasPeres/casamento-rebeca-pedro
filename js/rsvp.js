@@ -3,9 +3,36 @@
    Salva nome, idade e telefone na aba "Presenca" da planilha.
    ============================================================ */
 (function () {
+  // Vire para true quando quiser reabrir as confirmações de presença.
+  const RSVP_ABERTO = false;
+
   const modal = document.getElementById('rsvp-modal');
   const trigger = document.getElementById('rsvp-trigger');
   if (!modal || !trigger) return;
+
+  // Confirmações encerradas: o botão abre o modal de aviso.
+  if (!RSVP_ABERTO) {
+    const closed = document.getElementById('rsvp-closed-modal');
+    const openClosed = () => {
+      if (!closed) return;
+      closed.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    };
+    const closeClosed = () => {
+      if (!closed) return;
+      closed.classList.remove('is-open');
+      document.body.style.overflow = '';
+    };
+    trigger.addEventListener('click', openClosed);
+    if (closed) {
+      closed.querySelector('.gift-modal__close').addEventListener('click', closeClosed);
+      closed.querySelector('[data-rsvp-closed-backdrop]').addEventListener('click', closeClosed);
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && closed.classList.contains('is-open')) closeClosed();
+      });
+    }
+    return; // não conecta o formulário de confirmação
+  }
 
   const nameEl  = modal.querySelector('[data-rsvp-name]');
   const ageEl   = modal.querySelector('[data-rsvp-age]');
