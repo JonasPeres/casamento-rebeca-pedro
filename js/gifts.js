@@ -82,6 +82,15 @@ const GIFTS = [
   { id: 'robo-aspirador',   name: 'Robô aspirador',                               price: 2400,    cat: 'eletro',    img: 'assets/presentes/img-50.jpeg', link: 'https://mpago.la/1reRQfA' },
   { id: 'depurador',        name: 'Depurador de ar',                              price: 420.96,  cat: 'eletro',    img: 'assets/presentes/img-51.jpeg', link: 'https://mpago.la/2quekVk' },
   { id: 'ps5',              name: 'PS5: diversão pro noivo',                      price: 4420,    cat: 'divertidos',img: 'assets/presentes/img-52.jpeg', link: 'https://mpago.la/1Nr6KJb' },
+  { id: 'kit-ferramentas',  name: 'Kit de ferramentas com furadeira',             price: 303.64,  cat: 'casa',      img: 'assets/presentes/img-53.jpeg', link: 'https://mpago.la/1QMRg76' },
+  { id: 'mesa-dobravel',    name: 'Mesa dobrável',                                price: 399,     cat: 'moveis',    img: 'assets/presentes/img-54.jpeg', link: 'https://mpago.la/2XCXwsM' },
+  { id: 'churrasqueira',    name: 'Churrasqueira elétrica',                       price: 245,     cat: 'eletro',    img: 'assets/presentes/img-55.jpeg', link: 'https://mpago.la/1XQjFCV' },
+  { id: 'cafeteira',        name: 'Cafeteira / máquina de café',                  price: 1262,    cat: 'eletro',    img: 'assets/presentes/img-56.jpeg', link: 'https://mpago.la/1GXxRdT' },
+  { id: 'armario-cozinha',  name: 'Armário de cozinha',                           price: 526,     cat: 'moveis',    img: 'assets/presentes/img-57.jpeg', link: 'https://www.mercadopago.com.br/checkout/v1/payment/redirect/?source=link&router-request-id=c472d0b1-10c5-4743-b04a-dd681bc578ea&preference-id=1074477758-a2603653-96f5-4867-aea5-a92b3e7392d4' },
+  { id: 'guarda-roupa',     name: 'Guarda-roupa 3 portas',                        price: 626.18,  cat: 'moveis',    img: 'assets/presentes/img-58.jpeg', link: 'https://www.mercadopago.com.br/checkout/v1/payment/redirect/?source=link&router-request-id=ae465647-8294-4370-b2b0-e49cdde1d230&preference-id=1074477758-8ef11f21-b632-4e56-b3f2-a0df9d2b32f4' },
+  { id: 'balcao-cozinha',   name: 'Balcão de cozinha',                            price: 463.06,  cat: 'moveis',    img: 'assets/presentes/img-59.jpeg', link: 'https://www.mercadopago.com.br/checkout/v3/payment/redirect/?source=link&router-request-id=99a67dae-b314-4626-8754-70a876f155df&preference-id=1074477758-680114f4-1f4c-4a3f-8435-07b6eb466887' },
+  { id: 'espelho',          name: 'Espelho de corpo inteiro',                     price: 420.96,  cat: 'moveis',    img: 'assets/presentes/img-60.jpeg', link: 'https://www.mercadopago.com.br/checkout/v1/payment/redirect/61977cef-45ad-411c-ab75-308d98b6283e/payment-option-form/?source=link&router-request-id=f798e3fd-83d9-4bdf-82dd-55d2f4ed4916&preference-id=1074477758-5b95dc8a-162b-42d7-97ff-826a48e6abaf&p=14f76aeecea930539798733638dee463' },
+  { id: 'ajuda-gas',        name: 'Ajuda com o gás 🔥',                           price: 263.10,  cat: 'divertidos',img: 'assets/presentes/img-61.jpeg', link: 'https://mpago.la/1qnNd8b' },
 ];
 
 const brl = (v) => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
