@@ -139,8 +139,13 @@ function handleClaim_(data) {
 
   const sh = getSheet_();
   const rows = sh.getDataRange().getValues();
+  // Anti-duplicata: registros antigos/manuais podem ter o NOME na coluna A,
+  // enquanto os novos gravam o id. Comparamos id e nome nas colunas A e B.
+  const alvo = [String(id), String(item || '')].filter(Boolean);
   for (let i = 1; i < rows.length; i++) {
-    if (String(rows[i][0]) === String(id)) {
+    const colA = String(rows[i][0] || '');
+    const colB = String(rows[i][1] || '');
+    if (alvo.indexOf(colA) !== -1 || (colB && alvo.indexOf(colB) !== -1)) {
       return jsonOut_({ ok: false, error: 'Este presente já foi reservado por outro convidado.' });
     }
   }

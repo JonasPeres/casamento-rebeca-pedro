@@ -307,8 +307,14 @@ function renderSkeletons() {
   }
 }
 
+// Retorna o registro de "presenteado" de um item, aceitando chave por id OU
+// por nome (a planilha tem registros antigos/manuais indexados pelo nome).
+function giftClaim(g) {
+  return claimedCache[g.id] || claimedCache[g.name] || null;
+}
+
 function giftCard(g) {
-  const claimed = !!claimedCache[g.id];
+  const claimed = !!giftClaim(g);
   const card = document.createElement('article');
   card.className = 'gift-card' + (claimed ? ' is-claimed' : '');
   card.innerHTML = `
@@ -334,7 +340,7 @@ function renderList() {
   list.innerHTML = '';
   const items = GIFTS
     .filter(g => activeFilter === 'all' || g.cat === activeFilter)
-    .sort((a, b) => Number(!!claimedCache[a.id]) - Number(!!claimedCache[b.id]));
+    .sort((a, b) => Number(!!giftClaim(a)) - Number(!!giftClaim(b)));
 
   if (!items.length) {
     list.innerHTML = '<p class="gift-empty">Nenhum item nesta categoria.</p>';
