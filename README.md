@@ -32,7 +32,7 @@ A lista de presentes registra cada confirmação numa planilha do Google em temp
 |---|---|
 | 🕐 **Contagem regressiva** ao vivo | 📍 **Cerimônia** com endereço e Google Maps |
 | 👗 **Dress code** com paleta visual | 🖼️ **Galeria** com carrossel auto-play |
-| 🎁 **Lista de presentes** (61 itens) | 🔄 **Controle compartilhado** anti-duplicata |
+| 🎁 **Lista de presentes** (62 itens) | 🔄 **Controle compartilhado** anti-duplicata |
 | 💸 **PIX livre** com qualquer valor | 📋 **Comprovante** salvo no Drive |
 | 🌸 **Pétalas caindo** no hero (canvas) | 🪄 **Reveal animations** ao rolar |
 | 📱 **Mobile-first** + PWA básico | 🔎 **SEO completo** (OG, Twitter, JSON-LD) |
